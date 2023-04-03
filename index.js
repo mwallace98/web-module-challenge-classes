@@ -86,7 +86,7 @@ age: 25
 class Car {
   constructor(model, mpg){
     this.model = model;
-    this.milespergallon = mpg;
+    this.milesPerGallon = mpg;
     this.tank = 0;
     this.odometer = 0;
   }
@@ -94,10 +94,10 @@ class Car {
     this.tank = this.tank + gallons;
   }
   drive(dist){
-    const drivableMiles = this.tank * this.milespergallon;
+    const drivableMiles = this.tank * this.milesPerGallon;
     if(dist <= drivableMiles){
       this.odometer = this.odometer + dist;
-      this.tank = this.tank = (dist /this.milespergallon);
+      this.tank = this.tank = (dist /this.milesPerGallon);
     }else{
       this.odometer = this.odometer + drivableMiles;
       this.tank = 0;
@@ -120,8 +120,16 @@ class Car {
 */
 
 class Lambdasian {
-  
+  constructor({name,age,location}){
+    this.name =name;
+    this.age = age;
+    this.location = location;
+  }
+  speak(){
+    return `Hello my name is ${this.name}, I am from ${this.location}.`
+  }
 }
+
 
 /*
   TASK 4
